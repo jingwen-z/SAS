@@ -12,8 +12,7 @@ run;
 ods rtf file="C:\Users\serge\Desktop\Cours\Master_1\Applied
 multivariate\PCASTATES.rtf";
 proc princomp data=amu.base plots(ncomp=3)=all out=amu.comp prefix=C;
-var Age Income Medicare Labor Expenses Hospitals Beds Population; /*Specify
-the variables involved in PCA*/
+var Age Income Medicare Labor Expenses Hospitals Beds Population; /*Specify the variables involved in PCA*/
 id code; /*The names identifying observations*/
 run;
 
@@ -50,10 +49,8 @@ maxclusters=5 /*number of clusters choosen */
 replace=part /*initial seeds choice*/
 maxiter =20 /*maximum number of iteratioons*/
 drift /* centers recalculated after each reallocation of one observation*/
-list /*gives the cluster variables that gives the cluster to which each
-observation belongs to*/
-distance /* gives the distance between the centers (means) of the final
-groups*/;
+list /*gives the cluster variables that gives the cluster to which each observation belongs to*/
+distance /* gives the distance between the centers (means) of the final groups*/;
 var C1 C2;
 id Code;
 run;
