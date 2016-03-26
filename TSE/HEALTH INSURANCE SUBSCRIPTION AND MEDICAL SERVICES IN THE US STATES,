@@ -1,0 +1,16 @@
+libname Amu "C:\Users\serge\Desktop\Cours\Master_1\Applied multivariate";
+PROC IMPORT
+DATAFILE='C:\Users\serge\Desktop\Cours\Master_1\Applied
+multivariate\bdd.xls'
+DBMS=xls
+OUT= Amu.base
+REPLACE;
+run;
+/* PCA procedure: producing an rtf file*/
+ods rtf file="C:\Users\serge\Desktop\Cours\Master_1\Applied
+multivariate\PCASTATES.rtf";
+proc princomp data=amu.base plots(ncomp=3)=all out=amu.comp prefix=C;
+var Age Income Medicare Labor Expenses Hospitals Beds Population; /*Specify
+the variables involved in PCA*/
+id code; /*The names identifying observations*/
+run;
