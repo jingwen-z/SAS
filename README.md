@@ -1,2 +1,2 @@
 # SAS
-exercise and project in SAS codes
+Exercise and project in SAS codes
